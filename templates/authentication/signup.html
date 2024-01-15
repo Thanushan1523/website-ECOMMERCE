@@ -1,1 +1,39 @@
-{% extends './baseauth.html' %}
+{% extends "base.html" %}
+{% block title %}SignUp{% endblock title %}
+
+{% block content %}
+<div class="card bg-light pd-5">
+  <h3 class=" text-dark">Signup</h3>
+  <form action="/auth/signup/" method="post">  {% csrf_token %}
+    <label for="email"> Email</label>
+    <div class="form-group" >
+    <input type="email" class="form-control " id="email" name="email" required/>
+    </div>
+  
+    <label for="pass1"> Password</label>
+    <div class="form-group">
+    <input type="password" class="form-control " name="pass1" required/>
+    </div>
+  
+    <label for="pass2"> Confirm Password</label>
+    <div class="form-group">
+    
+    <input type="password" class="form-control " name="pass2" required/> 
+  </div>
+  
+    <button class="btn-btn-dark" type="submit">SignUp</button>
+    
+  
+  <br>
+  <!-- additionaly added div  -->
+  Already User? <a href="/auth/login/">LogIn</a></div>
+  
+  
+  </form>
+</div>
+
+
+
+
+
+{% endblock content %}

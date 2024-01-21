@@ -1,0 +1,5 @@
+{% autoescape off %}
+hi{{user.username}}
+please click this link below to verify your account 
+http://{{domain}}{% url 'active' uidb64=uid token=token %}
+{% endautoescape %}

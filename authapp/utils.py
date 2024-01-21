@@ -4,4 +4,7 @@ import six
 class TokenGenerator(PasswordResetTokenGenerator):
     def _make_token_with_timestamp(self, user, timestamp):
         return (six.text_type(user.pk) +six.text_type(timestamp)+ six.text_type(user.is_active))
-    generate_token =TokenGenerator()
+generate_token =TokenGenerator()
+
+def generate_token():
+    pass
